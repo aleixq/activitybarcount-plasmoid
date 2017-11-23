@@ -1,0 +1,26 @@
+[Desktop Entry]
+Name=Activity Bar with counter
+ame[ca]=Barra d'activitat amb comptadors
+Name[ca@valencia]=Barra d'activitat amb comptadors
+Name[es]=Barra de actividad con contadores
+Comment=Tab bar to switch activities with windows counter
+Comment[ca]=Barra de pestanyes per a canviar d'activitat amb comptadors de finestres
+Comment[ca@valencia]=Barra de pestanyes per a canviar d'activitat amb comptadors de finestres
+Comment[es]=Barra de pestañas para cambiar actividades con contadores de ventanas
+Comment[x-test]=xxTab bar to switch activitiesxx
+Type=Service
+Icon=tab-new
+X-Plasma-API=declarativeappletscript
+X-Plasma-MainScript=ui/main.qml
+X-KDE-ServiceTypes=Plasma/Applet
+X-Plasma-Provides=org.kde.plasma.activities
+
+X-KDE-PluginInfo-Author=Aleix Quintana Alsius
+X-KDE-PluginInfo-Email=kinta@communia.org
+X-KDE-PluginInfo-Name=org.communia.activitybarcount
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Category=Windows and Tasks
+X-KDE-PluginInfo-Depends=
+X-KDE-PluginInfo-License=GPL-2.0+
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-FormFactors=desktop
