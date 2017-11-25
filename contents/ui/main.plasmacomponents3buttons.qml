@@ -66,7 +66,7 @@ Item {
         checked: model.current
         visible: tasksModel.count > 0
         width: tasksModel.count > 0 ? implicitWidth : 0
-        height: bar.height
+        //height: bar.height
         onClicked: {
           activityModel.setCurrentActivity(model.id, function() {})
         }
@@ -78,7 +78,7 @@ Item {
         background:
         Item {
           //retrocompatibility with old controls
-          implicitWidth: units.gridUnit * 6
+          implicitWidth: units.gridUnit * 4
           implicitHeight: units.gridUnit * 0.1
           property string position:{
             switch (plasmoid.location) {
@@ -158,7 +158,7 @@ Item {
         }
         PlasmaCore.ToolTipArea {
           id: tooltip
-          mainText: model.name + ' ' + tasksModel.count + ' ' + i18n('tasks')
+          //mainText: model.name + ' ' + tasksModel.count + ' ' + i18n('tasks')
           anchors.fill: parent
           interactive: true
           visible: tasksModel.count > 0
@@ -198,7 +198,7 @@ Item {
   PlasmaCore.DataSource {
     id: dataSource
     engine: "org.kde.activities"
-    connectedSources: [activeSource]
+    //connectedSources: [activeSource]
   }
   Component.onCompleted: {
     plasmoid.removeAction("configure");
