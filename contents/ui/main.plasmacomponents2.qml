@@ -53,7 +53,6 @@ Item {
         PlasmaComponents.TabBar {
             id: tabBar
             anchors.fill: parent
-            clip: false
             tabPosition: {
                 switch (plasmoid.location) {
                 case PlasmaCore.Types.LeftEdge:
@@ -66,21 +65,27 @@ Item {
                     return Qt.BottomEdge;
                 }
             }
-
-            Repeater {
-                id: activities
-                model: Activities.ActivityModel {
+                Activities.ActivityModel {
                     id: activityModel
                     shownStates: "Running"
                 }
-                
+            Repeater {
+                id: activities
+                model: PlasmaCore.SortFilterModel {
+                  id: activeWindowModel
+                  //filterRole: 'IsActive'
+                  //filterRegExp: 'true'
+                  sourceModel: activityModel
+                }                
                 delegate: PlasmaComponents.TabButton {
                     id: tab
                     checked: model.current
                     iconSource: model.icon
                     text: model.name + ' (' + tasksModel.count + ')'// + i18n('tasks')
-                    //visible: tasksModel.count > 0
+                    visible: tasksModel.count > 0
+                    //implicitWidth: {tasksModel.count > 0 ? null : 1} // Need to reproduce the behavior of https://api.kde.org/frameworks/plasma-framework/html/qml_2TabButton_8qml_source.html to choose between show or hide based on a property
                     onClicked: {
+                      console.warn(tabBar.implicitWidth)
                       activityModel.setCurrentActivity(model.id, function() {});
                     }
                     Component.onCompleted: {

@@ -1,1 +1,1 @@
-main.plasmacomponents3.qml
+main.plasmacomponents3buttons.qml

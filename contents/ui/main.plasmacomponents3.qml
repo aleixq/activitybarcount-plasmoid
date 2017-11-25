@@ -30,7 +30,6 @@ Item {
   Layout.minimumWidth: tabBar.contentWidth
   Layout.minimumHeight: tabBar.implicitHeight
   Plasmoid.preferredRepresentation: Plasmoid.fullRepresentation
-  
   //     RowLayout{
   //         id: activityBar
   //         anchors.fill: parent
@@ -72,12 +71,12 @@ Item {
         }
         contentItem:
         GridLayout{
-          anchors.fill: parent
+          //anchors.fill: parent
           id: tabLayout
           columns: 1
           rows: 1
           property bool portrait: root.height >= activityLabel.paintedHeight + units.iconSizes.small
-          flow: portrait ? GridLayout.LeftToRight : GridLayout.TopToBottom
+          flow: portrait ? GridLayout.LeftToRight : GridLayout.TopToBottom  //LeftToRight
           PlasmaCore.IconItem{
             id: activityIcon
             source: model.icon
