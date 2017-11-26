@@ -49,6 +49,10 @@ Item {
           return GridLayout.LeftToRight;
       }
     }
+    TaskManager.TasksModel {
+      // TODO If not there the first activity cannot be loaded when using plasmashell(it does when using plasmoidviewer,probably a bug)...
+      id: tasksModelInit
+    }    
     Activities.ActivityModel {
       id: activityModel
       shownStates: "Running"
